@@ -5,8 +5,8 @@ const createBoard = () => {
     .map((x) => Array(8).fill(null));
 };
 
-const x = [0, 0];
-const y = [2, 1]
+const start = [0, 0];
+const end = [5, 3];
 
 // Possible moves of the Knight
 const possibleMoves = [
@@ -47,16 +47,47 @@ const knightMoves = ([startX, startY], [endX, endY]) => {
     }
     level++;
   }
-  return { board, level };
+
+  const path = () => {
+    let result = [[endX, endY]];
+    let downX = endX;
+    let downY = endY;
+    let step = board[downX][downY];
+    console.log("step: ", step);
+    while (step > 0) {
+      step--;
+      possibleMoves.forEach((x) => {
+        downX = x[0] + downX;
+        downY = x[1] + downY;
+
+        if (
+          downX >= 0 &&
+          downX <= 7 &&
+          downY >= 0 &&
+          downY <= 7 &&
+          board[downX][downY] == step
+        ) {
+          result.push([downX, downY]);
+        }
+      });
+    }
+
+    console.log("result: ", result);
+    return result;
+  };
+
+  return { board, level, path };
 };
 
 // Create the board
 const board = createBoard();
 
-console.table(board);
-
-const path = knightMoves(x, y);
+const moves = knightMoves(start, end);
 
 console.table(board);
-console.log(`  > knightMoves([${x}], [${y}])`)
-console.log(`=> You made it in ${path.level} moves!  Here's your path: ${path.level});`)
+console.log(`  > knightMoves([${start}], [${end}])`);
+console.log(
+  `=> You made it in ${
+    moves.level
+  } moves!  Here's your path: [${moves.path()}];`
+);
