@@ -1,6 +1,8 @@
 // Create the chessboard
 const createBoard = () => {
-  return new Array(8).fill(new Array(8).fill(null));
+  return Array(8)
+    .fill()
+    .map((x) => Array(8).fill(null));
 };
 
 const possibleMoves = [
@@ -15,11 +17,14 @@ const possibleMoves = [
 ];
 
 const knightMoves = ([startX, startY], [endX, endY]) => {
-  console.log(startX, startY, endX, endY);
+  board[startX][startY] = 0;
+  console.log(board[startX][startY], startX, startY, endX, endY);
 };
 
 const board = createBoard();
-//console.table(board);
+console.table(board);
+board[1][3] = 8;
 
-const path = knightMoves([0, 0], [2, 1]);
-console.log(path);
+const path = knightMoves([1, 3], [5, 4]);
+
+console.table(board);
