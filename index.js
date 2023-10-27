@@ -20,26 +20,25 @@ const possibleMoves = [
   [-1, -2],
 ];
 
-const knightMoves = ([startX, startY], [endX, endY]) => {
+const knightMoves = (start, end) => {
   let level = 0;
-  board[startX][startY] = level;
+  board[start[0]][start[1]] = level;
 
-  while (board[endX][endY] == null) {
+  while (board[end[0]][end[1]] == null) {
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
         if (board[i][j] == level) {
           possibleMoves.forEach((x) => {
-            let tempX = x[0] + i;
-            let tempY = x[1] + j;
+            let temp = [x[0] + i, x[1] + j];
 
             if (
-              tempX >= 0 &&
-              tempX <= 7 &&
-              tempY >= 0 &&
-              tempY <= 7 &&
-              board[tempX][tempY] == null
+              temp[0] >= 0 &&
+              temp[0] <= 7 &&
+              temp[1] >= 0 &&
+              temp[1] <= 7 &&
+              board[temp[0]][temp[1]] == null
             ) {
-              board[tempX][tempY] = level + 1;
+              board[temp[0]][temp[1]] = level + 1;
             }
           });
         }
@@ -48,6 +47,7 @@ const knightMoves = ([startX, startY], [endX, endY]) => {
     level++;
   }
 
+  /*
   const path = () => {
     let result = [[endX, endY]];
     let downX = endX;
@@ -75,8 +75,9 @@ const knightMoves = ([startX, startY], [endX, endY]) => {
     console.log("result: ", result);
     return result;
   };
+*/
 
-  return { board, level, path };
+  return { board, level};
 };
 
 // Create the board
@@ -89,5 +90,5 @@ console.log(`  > knightMoves([${start}], [${end}])`);
 console.log(
   `=> You made it in ${
     moves.level
-  } moves!  Here's your path: [${moves.path()}];`
+  } moves!  Here's your path: [${moves.level}];`
 );
