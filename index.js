@@ -2,7 +2,7 @@
 const createBoard = () => {
   return Array(8)
     .fill()
-    .map((x) => Array(8).fill(null));
+    .map((x) => Array(8).fill({level: null}));
 };
 
 const start = [0, 0];
@@ -22,12 +22,12 @@ const possibleMoves = [
 
 const knightMoves = (start, end) => {
   let level = 0;
-  board[start[0]][start[1]] = [level, start];
+  board[start[0]][start[1]].level = level;
 
-  while (board[end[0]][end[1]] == null) {
+  while (board[end[0]][end[1]].level == null) {
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
-        if (board[i][j][0] && board[i][j] == level) {
+        if (board[i][j][0] == level) {
           possibleMoves.forEach((x) => {
             let temp = [x[0] + i, x[1] + j];
 
@@ -36,9 +36,9 @@ const knightMoves = (start, end) => {
               temp[0] <= 7 &&
               temp[1] >= 0 &&
               temp[1] <= 7 &&
-              board[temp[0]][temp[1]] == null
+              board[temp[0]][temp[1]][0] == "aaa"
             ) {
-              board[temp[0]][temp[1]] = [level + 1, " hh "];
+              board[temp[0]][temp[1]][0] = level + 1;
               
             }
           });
@@ -82,21 +82,19 @@ const knightMoves = (start, end) => {
 };
 
 
-const array1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-console.table(array1);
-array1[0][1] = [22, 33, 44]
-console.table(array1);
-console.log(array1[0][1][2])
-
 // Create the board
 const board = createBoard();
+console.table(board);
 
 const moves = knightMoves(start, end);
 
 console.table(board);
 console.log(`  > knightMoves([${start}], [${end}])`);
+/*
 console.log(
   `=> You made it in ${
     moves.level
   } moves!  Here's your path: [${moves.level}];`
 );
+console.table(board);
+*/
