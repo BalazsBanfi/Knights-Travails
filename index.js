@@ -1,12 +1,26 @@
 // Create the chessboard
 const createBoard = () => {
+  let arr = [];
+  let value = {level: "null"};
+
+  // creating two-dimensional array
+  for (let i = 0; i < 8; i++) {
+    arr[i] = [];
+    for (let j = 0; j < 8; j++) {
+      arr[i][j] = value;
+    }
+  }
+  return arr;
+}
+/*
+const createBoard = () => {
   return Array(8)
     .fill()
-    .map((x) => Array(8).fill({level: null}));
+    .map(() => Array(8).fill({ level: "null" }));
 };
-
+*/
 const start = [0, 0];
-const end = [5, 3];
+const end = [0, 1];
 
 // Possible moves of the Knight
 const possibleMoves = [
@@ -17,17 +31,18 @@ const possibleMoves = [
   [-2, 1],
   [-2, -1],
   [-1, 2],
-  [-1, -2],
+  [-1, -2]
 ];
 
 const knightMoves = (start, end) => {
-  let level = 0;
-  board[start[0]][start[1]].level = level;
-
-  while (board[end[0]][end[1]].level == null) {
+  let levelDef = 0;
+  board[start[0]][start[1]].level = levelDef;
+  
+  while (board[end[0]][end[1]].level == "null") {
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
-        if (board[i][j][0] == level) {
+        if (board[i][j].level == levelDef) {
+          console.log("board i j ", i, j, board[i][j].level, levelDef)
           possibleMoves.forEach((x) => {
             let temp = [x[0] + i, x[1] + j];
 
@@ -36,16 +51,15 @@ const knightMoves = (start, end) => {
               temp[0] <= 7 &&
               temp[1] >= 0 &&
               temp[1] <= 7 &&
-              board[temp[0]][temp[1]][0] == "aaa"
+              board[temp[0]][temp[1]].level == "null"
             ) {
-              board[temp[0]][temp[1]][0] = level + 1;
-              
+              board[temp[0]][temp[1]].level = levelDef + 1;
             }
           });
         }
       }
     }
-    level++;
+    levelDef++;
   }
 
   /*
@@ -78,9 +92,8 @@ const knightMoves = (start, end) => {
   };
 */
 
-  return { board, level};
+  return { board, levelDef };
 };
-
 
 // Create the board
 const board = createBoard();
@@ -88,13 +101,10 @@ console.table(board);
 
 const moves = knightMoves(start, end);
 
-console.table(board);
+//console.table(board);
 console.log(`  > knightMoves([${start}], [${end}])`);
 /*
 console.log(
-  `=> You made it in ${
-    moves.level
-  } moves!  Here's your path: [${moves.level}];`
+  `=> You made it in ${moves.levelDef} moves!  Here's your path: [${moves.levelDef}];`
 );
-console.table(board);
-*/
+console.table(board);*/
