@@ -22,12 +22,12 @@ const possibleMoves = [
 
 const knightMoves = (start, end) => {
   let level = 0;
-  board[start[0]][start[1]] = level;
+  board[start[0]][start[1]] = [level, start];
 
   while (board[end[0]][end[1]] == null) {
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
-        if (board[i][j] == level) {
+        if (board[i][j][0] && board[i][j] == level) {
           possibleMoves.forEach((x) => {
             let temp = [x[0] + i, x[1] + j];
 
@@ -38,7 +38,8 @@ const knightMoves = (start, end) => {
               temp[1] <= 7 &&
               board[temp[0]][temp[1]] == null
             ) {
-              board[temp[0]][temp[1]] = level + 1;
+              board[temp[0]][temp[1]] = [level + 1, " hh "];
+              
             }
           });
         }
@@ -79,6 +80,13 @@ const knightMoves = (start, end) => {
 
   return { board, level};
 };
+
+
+const array1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+console.table(array1);
+array1[0][1] = [22, 33, 44]
+console.table(array1);
+console.log(array1[0][1][2])
 
 // Create the board
 const board = createBoard();
