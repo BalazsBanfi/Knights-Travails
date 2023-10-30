@@ -14,7 +14,7 @@ const createBoard = () => {
 };
 
 const start = [0, 0];
-const end = [2, 1];
+const end = [2, 6];
 
 // Possible moves of the Knight
 const possibleMoves = [
@@ -31,7 +31,7 @@ const possibleMoves = [
 const knightMoves = (start, end) => {
   let levelDef = 0;
   board[start[0]][start[1]].level = levelDef;
-  board[start[0]][start[1]].path.push(start)
+  board[start[0]][start[1]].path.push(start);
 
   while (board[end[0]][end[1]].level == "null") {
     for (let i = 0; i < 8; i++) {
@@ -48,8 +48,8 @@ const knightMoves = (start, end) => {
               board[temp[0]][temp[1]].level == "null"
             ) {
               board[temp[0]][temp[1]].level = levelDef + 1;
-              board[temp[0]][temp[1]].path = [...board[i][j].path, [temp[0], temp[1]]];
-              
+              board[temp[0]][temp[1]].path = [...board[i][j].path];
+              board[temp[0]][temp[1]].path.push([temp[0], temp[1]])
             }
           });
         }
@@ -66,13 +66,11 @@ const board = createBoard();
 
 const moves = knightMoves(start, end);
 
-console.table(board);
-
 //console.table(board);
 console.log(`  > knightMoves([${start}], [${end}])`);
 
-
 console.log(
-  `=> You made it in ${moves.levelDef} moves!  Here's your path: [${board[end[0]][end[1]].path}];`
+  `=> You made it in ${moves.levelDef} moves!  Here's your path: ${JSON.stringify(
+    board[end[0]][end[1]].path)
+  };`
 );
-console.table(board);
