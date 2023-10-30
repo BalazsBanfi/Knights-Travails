@@ -1,4 +1,10 @@
 export const renderPage = (content) => {
+  const starting = document.getElementById("starting");
+  const goal = document.getElementById("goal");
+  const random = document.getElementById("random");
+  const ride = document.getElementById("ride");
+  const clear = document.getElementById("clear");
+
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
       let cell = document.createElement("div");
@@ -14,5 +20,6 @@ export const renderPage = (content) => {
   }
   const svg = document.createElement("img");
   svg.setAttribute("src", "knight.svg");
-  document.getElementById("00").appendChild(svg);
+
+  document.getElementById("01").appendChild(svg);
 };
