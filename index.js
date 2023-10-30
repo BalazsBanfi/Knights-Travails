@@ -1,9 +1,15 @@
 import { knightMoves } from "./knightMoves.js";
+import { renderPage } from "./render.js";
 
 const start = [2, 7];
 const end = [6, 3];
 
 const moves = knightMoves(start, end);
+
+const content = document.getElementById("table");
+
+renderPage(content);
+
 
 /* console:
 > knightMoves([2,7], [6,3])
