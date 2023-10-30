@@ -87,3 +87,11 @@ button:active {
 /******************
 ***Table section***
 ******************/
+
+#table {
+    border: 1px solid var(--borderC);
+  padding: 2rem;
+  display: grid;
+  grid-template: repeat(8, 1fr) / repeat(8, 1fr);
+  place-items: center;
+}
