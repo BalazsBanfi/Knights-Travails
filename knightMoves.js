@@ -43,6 +43,16 @@ export const knightMoves = (start, end) => {
     }
     levelDef++;
   }
+  //console.table(board);
+  console.log(`  > knightMoves([${start}], [${end}])`);
+
+  console.log(
+    `=> You made it in ${
+      levelDef
+    } moves!  Here's your path: ${JSON.stringify(
+      board[end[0]][end[1]].path
+    )};`
+  );
 
   return { board, levelDef };
 };

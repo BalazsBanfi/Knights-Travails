@@ -1,18 +1,11 @@
-
-const start = [0, 0];
-const end = [3, 3];
 import { knightMoves } from "./knightMoves.js";
 
-
-// Create the board
+const start = [2, 7];
+const end = [6, 3];
 
 const moves = knightMoves(start, end);
 
-//console.table(board);
-console.log(`  > knightMoves([${start}], [${end}])`);
-
-console.log(
-  `=> You made it in ${moves.levelDef} moves!  Here's your path: ${JSON.stringify(
-    moves.board[end[0]][end[1]].path)
-  };`
-);
+/* console:
+> knightMoves([2,7], [6,3])
+knightMoves.js:49 => You made it in 4 moves!  Here's your path: [[2,7],[1,5],[2,3],[4,2],[6,3]];
+*/

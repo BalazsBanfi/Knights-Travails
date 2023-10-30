@@ -2,7 +2,7 @@
 export const createBoard = () => {
     let arr = [];
   
-    // creating two-dimensional array
+    // creating two-dimensional array and fill with value: null, path: []
     for (let i = 0; i < 8; i++) {
       arr[i] = [];
       for (let j = 0; j < 8; j++) {
