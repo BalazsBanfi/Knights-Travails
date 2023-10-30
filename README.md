@@ -1,4 +1,3 @@
-# Knights-Travails
 # The Odin Project - Knights Travails
 
 This is a solution to the [The Odin Project Knights Travails project](https://www.theodinproject.com/lessons/javascript-knights-travails). The Odin Project challenges help you improve your coding skills by building realistic projects. 
@@ -30,16 +29,19 @@ This is a solution to the [The Odin Project Knights Travails project](https://ww
 
 ## My process
 
+I chosed a different method, instead of working with nodes, queues and stacks, I store the {number of steps, path} in evry cgess field. In this case the end-field stores the results also.
+
 ### Built with
 
 - JavaScrip
-- Binary Search Tree
+- Multidimensional array for the chess fields
+- Store values in objects
 - Recursion
 
 
 ### Continued development
 
-I would like to be comfortable with responsive web design techniques, css grid, flexbox and JavaScript and want to perfect mobile-first method.
+I would like to be comfortable with JavaScript methods, responsive web design techniques, css grid, flexbox and JavaScript and want to perfect mobile-first method.
 
 
 ### Useful resources
@@ -58,4 +60,4 @@ I would like to be comfortable with responsive web design techniques, css grid, 
 
 ## Acknowledgments
 
-Thanks for the helps to CS50, Frontend Mentor, The Odin Project, freecodecamp.org, Kevin Powell, Web Dev Simplified and many more..
+Thanks for the helps to CS50, The Odin Project, Frontend Mentor, freecodecamp.org, Web Dev Simplified, Kevin Powell and many more..
