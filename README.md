@@ -29,7 +29,7 @@ This is a solution to the [The Odin Project Knights Travails project](https://ww
 
 ## My process
 
-I chosed a different method, instead of working with nodes, queues and stacks, I store the {number of steps, path} in evry cgess field. In this case the end-field stores the results also.
+I chosed a different method, instead of working with nodes, queues and stacks, I store the {number of steps, path} in every chess-field. In this case the end-field stores the results also.
 
 ### Built with
 
