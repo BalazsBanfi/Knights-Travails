@@ -8,7 +8,7 @@ export const renderPage = (content) => {
         cell.classList.add("whiteCell");
       }
       cell.classList.add("cell");
-      cell.setAttribute("id", `${i}${j}`)
+      cell.setAttribute("id", `${i}${j}`);
       content.appendChild(cell);
     }
   }

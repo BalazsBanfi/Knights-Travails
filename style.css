@@ -13,7 +13,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid red;
+  /*  border: 1px solid red;*/
 }
 
 /*****************
@@ -69,9 +69,10 @@ button {
   background-color: var(--buttonBg);
   color: var(--buttonC);
   padding: 0.5rem 2rem;
-  margin: 0.25rem;
+  margin: 0.33rem;
   border: 1px solid var(--borderC);
-  border-radius: 10px;
+  box-shadow: 0px 0px 2px 1px var(--buttonBg);
+  border-radius: 7px;
   cursor: pointer;
   transition-duration: 0.2s;
 }
@@ -91,7 +92,7 @@ button:active {
 ******************/
 
 #table {
-  border: 2px solid var(--borderC);
+  box-shadow: 0px 0px 13px 5px var(--borderC);
   margin: 2rem;
   display: grid;
   grid-template: repeat(8, 1fr) / repeat(8, 1fr);
