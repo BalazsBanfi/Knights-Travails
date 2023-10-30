@@ -52,39 +52,8 @@ header * {
   min-width: 100vw;
   padding: 1rem 1rem;
   display: grid;
-  grid-template: 1fr / 400px 1fr;
+  grid-template: 1fr / 1fr;
   place-items: center;
-}
-
-/*******************
-***Buttons section***
-*******************/
-
-.buttons {
-  padding: 1rem;
-}
-
-button {
-  width: 200px;
-  background-color: var(--buttonBg);
-  color: var(--buttonC);
-  padding: 0.5rem 2rem;
-  margin: 0.33rem;
-  border: 1px solid var(--borderC);
-  box-shadow: 0px 0px 2px 1px var(--buttonBg);
-  border-radius: 7px;
-  cursor: pointer;
-  transition-duration: 0.2s;
-}
-
-button:hover {
-  opacity: 0.7;
-  transform: translateY(-1px);
-}
-
-button:active {
-  box-shadow: 0 2px var(--buttonBg);
-  transform: translateY(1px);
 }
 
 /******************
@@ -100,8 +69,8 @@ button:active {
 }
 
 .cell {
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   cursor: pointer;
   display: flex;
   align-items: center;

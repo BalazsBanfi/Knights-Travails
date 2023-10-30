@@ -1,10 +1,4 @@
 export const renderPage = (content) => {
-  const starting = document.getElementById("starting");
-  const goal = document.getElementById("goal");
-  const random = document.getElementById("random");
-  const ride = document.getElementById("ride");
-  const clear = document.getElementById("clear");
-
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
       let cell = document.createElement("div");
