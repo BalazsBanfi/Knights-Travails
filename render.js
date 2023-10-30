@@ -1,4 +1,6 @@
 export const renderPage = (content) => {
+  let start = [];
+  let end = [];
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
       let cell = document.createElement("div");
@@ -14,6 +16,22 @@ export const renderPage = (content) => {
   }
   const svg = document.createElement("img");
   svg.setAttribute("src", "knight.svg");
+
+  const cells = document.querySelectorAll(".cell");
+  cells.forEach((square) => {
+    square.addEventListener("click", () => {
+      if (start.length < 1 || end.length > 1) {
+        start.push(+square.id[0]);
+        start.push(+square.id[1]);
+        square.appendChild(svg);
+        console.log(start);
+      } else {
+        end.push(+square.id[0]);
+        end.push(+square.id[1]);
+        console.log(end);
+      }
+    });
+  });
 
   document.getElementById("01").appendChild(svg);
 };
