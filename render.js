@@ -12,4 +12,7 @@ export const renderPage = (content) => {
       content.appendChild(cell);
     }
   }
+  const svg = document.createElement("img");
+  svg.setAttribute("src", "knight.svg");
+  document.getElementById("00").appendChild(svg);
 };
