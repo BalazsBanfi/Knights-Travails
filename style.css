@@ -1,0 +1,89 @@
+:root {
+  --bodyBg: rgb(38, 89, 106);
+  --headBg: rgb(24, 54, 64);
+  --headC: rgb(50, 124, 148);
+  --borderC: rgb(9, 19, 22);
+  --buttonBg: rgb(24, 54, 64);
+  --buttonC: rgb(69, 179, 215);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid red;
+}
+
+/*****************
+  ***Body section***
+  ******************/
+
+body {
+  text-align: center;
+  font-size: 13px;
+  font-family: Roboto, sans-serif;
+  display: grid;
+  place-items: center;
+  background-color: var(--bodyBg);
+}
+
+/*******************
+***Header section***
+*******************/
+
+header {
+  min-width: 100vw;
+  background-color: var(--headBg);
+  color: var(--headC);
+  padding: 0.5rem;
+}
+
+header * {
+  padding: 0.5rem;
+}
+
+/**********************
+***Container section***
+**********************/
+
+.container {
+  min-width: 100vw;
+  padding: 1rem 1rem;
+  display: grid;
+  grid-template: 1fr / 400px 1fr;
+  place-items: center;
+}
+
+/*******************
+***Buttons section***
+*******************/
+
+.buttons {
+  padding: 1rem;
+}
+
+button {
+  width: 200px;
+  background-color: var(--buttonBg);
+  color: var(--buttonC);
+  padding: 0.5rem 2rem;
+  margin: 0.25rem;
+  border: 1px solid var(--borderC);
+  border-radius: 10px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+button:hover {
+  opacity: 0.7;
+  transform: translateY(-1px);
+}
+
+button:active {
+  box-shadow: 0 2px var(--buttonBg);
+  transform: translateY(1px);
+}
+
+/******************
+***Table section***
+******************/

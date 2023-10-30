@@ -3,19 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="index.js" defer type="module"></script>
     <title>Knights Travail</title>
-    <style>
-      * {
-        background-color: #999;
-        color: #44d;
-      }
-    </style>
   </head>
   <body>
-    <div>
+    <header>
       <h1>Knights Travails</h1>
-      <div>Press ctrl+shift+c to see results in console.</div>
+      <p>Press ctrl+shift+c to see results in console.</p>
+    </header>
+    <div class="container">
+      <div class="buttons">
+        <button id="starting">Select starting place</button>
+        <button id="random">Random starting place</button>
+        <button id="ending">Select ending place</button>
+        <button id="ride">Let's ride!</button>
+        <button id="clear">Clear table</button>
+      </div>
+      <div id="table">
+      </div>
+    </div>
+    <div>
     </div>
   </body>
 </html>
