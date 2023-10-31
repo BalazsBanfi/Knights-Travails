@@ -79,6 +79,7 @@ header * {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .cell:hover {
@@ -91,6 +92,84 @@ header * {
 
 .whiteCell {
   background-color: var(--whiteCell);
+}
+
+/**************************
+***Cell columns and rows***
+**************************/
+
+.cell::before {
+  position: absolute;
+  right: 75px;
+}
+
+.cell::after {
+  position: absolute;
+  top: 75px;
+}
+
+.cell:nth-child(1)::before {
+  content: "8";
+}
+
+.cell:nth-child(9)::before {
+  content: "7";
+}
+
+.cell:nth-child(17)::before {
+  content: "6";
+}
+
+.cell:nth-child(25)::before {
+  content: "5";
+}
+
+.cell:nth-child(33)::before {
+  content: "4";
+}
+
+.cell:nth-child(41)::before {
+  content: "3";
+}
+
+.cell:nth-child(49)::before {
+  content: "2";
+}
+
+.cell:nth-child(57)::before {
+  content: "1";
+}
+
+.cell:nth-child(57)::after {
+  content: "A";
+}
+
+.cell:nth-child(58)::after {
+  content: "B";
+}
+
+.cell:nth-child(59)::after {
+  content: "C";
+}
+
+.cell:nth-child(60)::after {
+  content: "D";
+}
+
+.cell:nth-child(61)::after {
+  content: "E";
+}
+
+.cell:nth-child(62)::after {
+  content: "F";
+}
+
+.cell:nth-child(63)::after {
+  content: "G";
+}
+
+.cell:nth-child(64)::after {
+  content: "H";
 }
 
 img {
