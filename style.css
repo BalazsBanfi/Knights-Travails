@@ -181,6 +181,7 @@ img {
 ***Media query section***
 ************************/
 
+
 @media screen and (max-width: 750px) {
   .cell {
     width: 50px;
@@ -192,5 +193,19 @@ img {
   }
   .cell::after {
     top: 60px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cell {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  .cell::before {
+    right: 50px;
+  }
+  .cell::after {
+    top: 50px;
   }
 }
