@@ -3,10 +3,9 @@
   --headBg: rgb(24, 54, 64);
   --headC: rgb(50, 124, 148);
   --borderC: rgb(9, 19, 22);
-  --buttonBg: rgb(24, 54, 64);
-  --buttonC: rgb(69, 179, 215);
   --blackCell: rgb(48, 59, 60);
   --whiteCell: rgb(129, 159, 161);
+  --paraC: rgb(70, 149, 85);
 }
 
 * {
@@ -21,7 +20,7 @@
 
 body {
   text-align: center;
-  font-size: 13px;
+  font-size: 15px;
   font-family: Roboto, sans-serif;
   display: grid;
   place-items: center;
@@ -33,7 +32,7 @@ body {
 *******************/
 
 header {
-  min-width: 100vw;
+  min-width: 100%;
   background-color: var(--headBg);
   color: var(--headC);
   padding: 0.5rem;
@@ -43,13 +42,17 @@ header * {
   padding: 0.5rem;
 }
 
+#pathParagraph {
+  color: var(--paraC);
+}
+
 /**********************
 ***Container section***
 **********************/
 
 .container {
-  min-width: 100vw;
-  padding: 1rem 1rem;
+  min-width: 100%;
+  padding: 0.5rem 0.5rem;
   display: grid;
   grid-template: 1fr / 1fr;
   place-items: center;
@@ -93,4 +96,14 @@ header * {
 img {
   width: 80%;
   height: 80%;
+}
+
+/************************
+***Media query section***
+************************/
+
+@media screen and (max-width: 750px) {
+  .wwcontainer {
+    grid: 4fr 5fr / 1fr 1fr;
+  }
 }

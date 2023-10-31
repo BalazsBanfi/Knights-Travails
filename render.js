@@ -2,7 +2,9 @@ import { knightMoves } from "./knightMoves.js";
 
 // Get the table element by id
 const content = document.getElementById("table");
+const paragraph = document.getElementById("pathParagraph");
 let knightPath = [];
+
 const renderMove = (path) => {
   // iterate the path array and color the cells, add no. to cells
   for (let i = 1; i < path.length; i++) {
@@ -10,8 +12,13 @@ const renderMove = (path) => {
     actualCell.style.backgroundColor = "rgb(70, 149, 85)";
     actualCell.innerHTML = i;
   }
-};
 
+  paragraph.innerHTML = `Knight moves [${path[0][0]}, ${path[0][1]}] => [${
+    path[path.length - 1][0]
+  }, ${path[path.length - 1][1]}]  You made it in ${
+    path.length - 1
+  } moves!  Here's your path: ${JSON.stringify(path)}`;
+};
 // Clear the last path
 const clearPage = (path) => {
   for (let i = 1; i < path.length; i++) {
