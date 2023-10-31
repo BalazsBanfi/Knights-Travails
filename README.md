@@ -19,8 +19,9 @@ This is a solution to the [The Odin Project Knights Travails project](https://ww
 
 ### Screenshot
 
-![Desktop screenshot](./console.png)
+![Desktop screenshot](./desktop.png)
 
+![Console screenshot](./console.png)
 
 ### Links
 
