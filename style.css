@@ -13,7 +13,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /*  border: 1px solid red;*/
 }
 
 /*****************
@@ -71,16 +70,12 @@ header * {
 .cell {
   width: 65px;
   height: 65px;
-  color: black;
+  font-size: 1.25rem;
+  color: rgb(9, 19, 22);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.cellStep { 
-  background-color: green !important;
-  
 }
 
 .cell:hover {

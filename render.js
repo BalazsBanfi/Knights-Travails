@@ -1,18 +1,29 @@
 import { knightMoves } from "./knightMoves.js";
 
+// Get the table element by id
+const content = document.getElementById("table");
+let knightPath = [];
 const renderMove = (path) => {
-  console.log("Hahóó", path);
-
+  // iterate the path array and color the cells, add no. to cells
   for (let i = 1; i < path.length; i++) {
     let actualCell = document.getElementById(`${path[i][0]}${path[i][1]}`);
-    actualCell.classList.add("cellStep");
+    actualCell.style.backgroundColor = "rgb(70, 149, 85)";
     actualCell.innerHTML = i;
   }
 };
 
-export const renderPage = (content, start) => {
+// Clear the last path
+const clearPage = (path) => {
+  for (let i = 1; i < path.length; i++) {
+    let actualCell = document.getElementById(`${path[i][0]}${path[i][1]}`);
+    actualCell.style.backgroundColor = "";
+    actualCell.innerHTML = "";
+  }
+};
+
+export const renderPage = (start = [7, 1]) => {
   // The Knight starting position
-  let startId = `${start[0]}${start[1]}`; //TO DO: add static start and clear from index.js
+  let startId = `${start[0]}${start[1]}`;
 
   let end = [];
 
@@ -31,11 +42,9 @@ export const renderPage = (content, start) => {
     }
   }
 
-  // Add knight.svg as img
+  // Append knight.svg as img
   const svg = document.createElement("img");
   svg.setAttribute("src", "knight.svg");
-
-  // Append knight.svg to starting position
   document.getElementById(startId).appendChild(svg);
 
   // Add "click" eventlistener to all 64 cells
@@ -44,6 +53,7 @@ export const renderPage = (content, start) => {
     square.addEventListener("click", () => {
       // Set a new path and add the starting and ending coordinates
       if (start.length < 1 || end.length > 1) {
+        clearPage(knightPath);
         start.push(+square.id[0]);
         start.push(+square.id[1]);
         square.appendChild(svg);
@@ -52,11 +62,11 @@ export const renderPage = (content, start) => {
         end.push(+square.id[1]);
 
         //call knightMoves path
-        let knightPath = knightMoves(start, end).board[end[0]][end[1]].path;
+        knightPath = knightMoves(start, end).board[end[0]][end[1]].path;
         renderMove(knightPath);
+        start = [];
+        end = [];
       }
     });
   });
-
-
 };
