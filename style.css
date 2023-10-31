@@ -105,7 +105,7 @@ img {
 @media screen and (max-width: 750px) {
   .cell {
     width: 50px;
-    height: 50%;
+    height: 50px;
     font-size: 1rem;
   }
 }

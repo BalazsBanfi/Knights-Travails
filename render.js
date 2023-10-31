@@ -5,19 +5,36 @@ const content = document.getElementById("table");
 const paragraph = document.getElementById("pathParagraph");
 let knightPath = [];
 
+// Object for the chesstable columns
+const columns = {
+  0: "a",
+  1: "b",
+  2: "c",
+  3: "d",
+  4: "e",
+  5: "f",
+  6: "g",
+  7: "h",
+};
+
 const renderMove = (path) => {
-  // iterate the path array and color the cells, add no. to cells
+  // Iterate the path array and color the cells, add no. to cells
+  let result = "";
   for (let i = 1; i < path.length; i++) {
     let actualCell = document.getElementById(`${path[i][0]}${path[i][1]}`);
     actualCell.style.backgroundColor = "rgb(70, 149, 85)";
     actualCell.innerHTML = i;
+    result += `${i}. B${columns[path[i][1]]}${8 - path[i][0]}, `;
   }
+  // Delete last vovel of string
+  result = result.slice(0, -2);
 
-  paragraph.innerHTML = `Knight moves [${path[0][0]}, ${path[0][1]}] => [${
-    path[path.length - 1][0]
-  }, ${path[path.length - 1][1]}]  You made it in ${
-    path.length - 1
-  } moves!  Here's your path: ${JSON.stringify(path)}`;
+  // Write out the moves to the paragraph
+  paragraph.innerHTML = `Knight (B) moves ${columns[path[0][1]]}${
+    8 - path[0][0]
+  } => ${columns[path[path.length - 1][1]]}${
+    8 - path[path.length - 1][0]
+  }. You made it in ${path.length - 1} moves!  Here's your path: ${result}`;
 };
 // Clear the last path
 const clearPage = (path) => {

@@ -21,8 +21,6 @@ This is a solution to the [The Odin Project Knights Travails project](https://ww
 
 ![Desktop screenshot](./desktop.png)
 
-![Console screenshot](./console.png)
-
 ### Links
 
 - Solution URL: [Github repository](https://github.com/BalazsBanfi/Knights-Travails)
