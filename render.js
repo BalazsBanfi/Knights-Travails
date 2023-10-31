@@ -3,10 +3,10 @@ import { knightMoves } from "./knightMoves.js";
 const renderMove = (path) => {
   console.log("Hahóó", path);
 
-  for (let i = 0; i < path.length; i++) {
+  for (let i = 1; i < path.length; i++) {
     let actualCell = document.getElementById(`${path[i][0]}${path[i][1]}`);
-
     actualCell.classList.add("cellStep");
+    actualCell.innerHTML = i;
   }
 };
 
@@ -35,6 +35,9 @@ export const renderPage = (content, start) => {
   const svg = document.createElement("img");
   svg.setAttribute("src", "knight.svg");
 
+  // Append knight.svg to starting position
+  document.getElementById(startId).appendChild(svg);
+
   // Add "click" eventlistener to all 64 cells
   const cells = document.querySelectorAll(".cell");
   cells.forEach((square) => {
@@ -55,6 +58,5 @@ export const renderPage = (content, start) => {
     });
   });
 
-  // Append knight.svg to starting position
-  document.getElementById(startId).appendChild(svg);
+
 };

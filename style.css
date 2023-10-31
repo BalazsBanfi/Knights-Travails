@@ -71,14 +71,16 @@ header * {
 .cell {
   width: 65px;
   height: 65px;
+  color: black;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.cellStep {
-  opacity: 0.1;
+.cellStep { 
+  background-color: green !important;
+  
 }
 
 .cell:hover {
