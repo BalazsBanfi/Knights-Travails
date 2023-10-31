@@ -1,6 +1,14 @@
 import { knightMoves } from "./knightMoves.js";
 
-const renderMove = (moves) => {};
+const renderMove = (path) => {
+  console.log("Hahóó", path);
+
+  for (let i = 0; i < path.length; i++) {
+    let actualCell = document.getElementById(`${path[i][0]}${path[i][1]}`);
+
+    actualCell.classList.add("cellStep");
+  }
+};
 
 export const renderPage = (content, start) => {
   // The Knight starting position
@@ -39,7 +47,10 @@ export const renderPage = (content, start) => {
       } else {
         end.push(+square.id[0]);
         end.push(+square.id[1]);
-        let moves = knightMoves(start, end);
+
+        //call knightMoves path
+        let knightPath = knightMoves(start, end).board[end[0]][end[1]].path;
+        renderMove(knightPath);
       }
     });
   });

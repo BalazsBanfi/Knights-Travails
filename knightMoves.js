@@ -12,13 +12,16 @@ const possibleMoves = [
   [-1, -2],
 ];
 
+// Knightmoves function
 export const knightMoves = (start, end) => {
   const board = createBoard();
 
+  // Set starting cell value to ZERO
   let levelDef = 0;
   board[start[0]][start[1]].level = levelDef;
   board[start[0]][start[1]].path.push(start);
 
+  // Try all possible knight moves on table and finally reach the end cell in levelDef steps
   while (board[end[0]][end[1]].level == "null") {
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {

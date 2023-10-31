@@ -77,6 +77,10 @@ header * {
   justify-content: center;
 }
 
+.cellStep {
+  opacity: 0.1;
+}
+
 .cell:hover {
   opacity: 0.4;
 }
