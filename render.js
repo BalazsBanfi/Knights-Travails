@@ -30,7 +30,7 @@ const renderMove = (path) => {
   result = result.slice(0, -2);
 
   // Write out the moves to the paragraph
-  paragraph.innerHTML = `Knight (B) moves ${columns[path[0][1]]}${
+  paragraph.innerHTML = `Knight (B) moves: ${columns[path[0][1]]}${
     8 - path[0][0]
   } => ${columns[path[path.length - 1][1]]}${
     8 - path[path.length - 1][0]

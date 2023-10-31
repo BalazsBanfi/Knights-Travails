@@ -187,4 +187,10 @@ img {
     height: 50px;
     font-size: 1rem;
   }
+  .cell::before {
+    right: 60px;
+  }
+  .cell::after {
+    top: 60px;
+  }
 }
