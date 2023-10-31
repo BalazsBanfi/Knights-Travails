@@ -2,9 +2,9 @@ import { knightMoves } from "./knightMoves.js";
 import { renderPage } from "./render.js";
 
 const start = [7, 1];
-const end = [6, 3];
+//const end = [6, 3];
 
-const moves = knightMoves(start, end);
+//const moves = knightMoves(start, end);
 
 const content = document.getElementById("table");
 
