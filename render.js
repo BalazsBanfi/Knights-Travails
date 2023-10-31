@@ -1,13 +1,13 @@
-export const renderPage = (content) => {
-  let start = [];
+export const renderPage = (content, start) => {
+  let startId = `${start[0]}${start[1]}`;
   let end = [];
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
       let cell = document.createElement("div");
       if ((i + j) % 2 == 0) {
-        cell.classList.add("blackCell");
-      } else {
         cell.classList.add("whiteCell");
+      } else {
+        cell.classList.add("blackCell");
       }
       cell.classList.add("cell");
       cell.setAttribute("id", `${i}${j}`);
@@ -33,5 +33,5 @@ export const renderPage = (content) => {
     });
   });
 
-  document.getElementById("01").appendChild(svg);
+  document.getElementById(startId).appendChild(svg);
 };
