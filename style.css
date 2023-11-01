@@ -45,6 +45,8 @@ header * {
 
 #pathParagraph {
   color: var(--paraC);
+  transition-duration: 1.4s;
+  margin: 0 2rem;
 }
 
 /**********************
@@ -97,7 +99,7 @@ header * {
 
 .pathCell {
   background-color: var(--pathCell) !important;
-  
+  transition-duration: 0.4s;
 }
 
 /**************************
