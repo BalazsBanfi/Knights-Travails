@@ -29,13 +29,14 @@ The Odin Project challenges help you improve your coding skills by building real
 
 ## My process
 
-I chosed a different method then suggested in the project, instead of working with nodes, queues and stacks, I store { the number of steps, path } in every chess-field. In this case the end-field stores the results also.
+I chosed a different method in the project then suggested, instead of working with nodes, queues and stacks, I store { the number of steps, path } in every chess-field. In this case the end-field stores the results also.
 
 ### Built with
 
 - JavaScrip
 - Multidimensional array for the chess fields
 - Store values in objects
+- Git branches, git merge
 - Grid, CSS pseudo, change attributes with JavaScript
 
 ### Continued development
