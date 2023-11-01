@@ -1,6 +1,6 @@
 import { knightMoves } from "./knightMoves.js";
 
-// Get the table element by id
+// Get the table elements by id
 const content = document.getElementById("table");
 const paragraph = document.getElementById("pathParagraph");
 let knightPath = [];
@@ -22,11 +22,11 @@ const renderMove = (path) => {
   let result = "";
   for (let i = 1; i < path.length; i++) {
     let actualCell = document.getElementById(`${path[i][0]}${path[i][1]}`);
-    actualCell.style.backgroundColor = "rgb(70, 149, 85)";
+    actualCell.classList.add("pathCell");
     actualCell.innerHTML = i;
     result += `${i}. B${columns[path[i][1]]}${8 - path[i][0]}, `;
   }
-  // Delete last vovel of string
+  // Delete last 2 characters of result string
   result = result.slice(0, -2);
 
   // Write out the moves to the paragraph
@@ -36,12 +36,14 @@ const renderMove = (path) => {
     8 - path[path.length - 1][0]
   }. You made it in ${path.length - 1} moves!  Here's your path: ${result}`;
 };
+
 // Clear the last path
 const clearPage = (path) => {
   for (let i = 1; i < path.length; i++) {
     let actualCell = document.getElementById(`${path[i][0]}${path[i][1]}`);
-    actualCell.style.backgroundColor = "";
+    actualCell.classList.remove("pathCell");
     actualCell.innerHTML = "";
+    paragraph.innerHTML = "&nbsp";
   }
 };
 
@@ -55,11 +57,8 @@ export const renderPage = (start = [7, 1]) => {
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
       let cell = document.createElement("div");
-      if ((i + j) % 2 == 0) {
-        cell.classList.add("whiteCell");
-      } else {
-        cell.classList.add("blackCell");
-      }
+
+      cell.classList.add((i + j) % 2 == 0 ? "whiteCell" : "blackCell");
       cell.classList.add("cell");
       cell.setAttribute("id", `${i}${j}`);
       content.appendChild(cell);

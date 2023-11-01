@@ -5,6 +5,7 @@
   --borderC: rgb(9, 19, 22);
   --blackCell: rgb(48, 59, 60);
   --whiteCell: rgb(129, 159, 161);
+  --pathCell: rgb(70, 149, 85);
   --paraC: rgb(70, 149, 85);
 }
 
@@ -94,6 +95,11 @@ header * {
   background-color: var(--whiteCell);
 }
 
+.pathCell {
+  background-color: var(--pathCell) !important;
+  
+}
+
 /**************************
 ***Cell columns and rows***
 **************************/
@@ -180,7 +186,6 @@ img {
 /************************
 ***Media query section***
 ************************/
-
 
 @media screen and (max-width: 750px) {
   .cell {

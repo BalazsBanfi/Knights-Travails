@@ -29,7 +29,7 @@ export const knightMoves = (start, end) => {
           possibleMoves.forEach((x) => {
             let temp = [x[0] + i, x[1] + j];
 
-            // If the targeted cell is empty, add levelDef + 1 as value and push the walked path until it
+            // If the targeted cell is empty, add levelDef + 1 as value and push in the walked path
             if (
               temp[0] >= 0 &&
               temp[0] <= 7 &&
@@ -38,8 +38,10 @@ export const knightMoves = (start, end) => {
               board[temp[0]][temp[1]].level == "null"
             ) {
               board[temp[0]][temp[1]].level = levelDef + 1;
-              board[temp[0]][temp[1]].path = [...board[i][j].path];
-              board[temp[0]][temp[1]].path.push([temp[0], temp[1]]);
+              board[temp[0]][temp[1]].path = [
+                ...board[i][j].path,
+                [temp[0], temp[1]],
+              ];
             }
           });
         }
@@ -47,14 +49,6 @@ export const knightMoves = (start, end) => {
     }
     levelDef++;
   }
-  //console.table(board);
-  console.log(`  > knightMoves([${start}], [${end}])`);
 
-  console.log(
-    `=> You made it in ${levelDef} moves!  Here's your path: ${JSON.stringify(
-      board[end[0]][end[1]].path
-    )};`
-  );
-
-  return { board, levelDef };
+  return { board };
 };
