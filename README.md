@@ -1,6 +1,8 @@
 # The Odin Project - Knights Travails
 
-This is a solution to the [The Odin Project Knights Travails project](https://www.theodinproject.com/lessons/javascript-knights-travails). The Odin Project challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [The Odin Project Knights Travails project](https://www.theodinproject.com/lessons/javascript-knights-travails). The task is to find the shortest path between two positions for a knight piece.
+
+The Odin Project challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
