@@ -1,6 +1,6 @@
 # The Odin Project - Knights Travails
 
-This is a solution to the [The Odin Project Knights Travails project](https://www.theodinproject.com/lessons/javascript-knights-travails). The Odin Project challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [The Odin Project Knights Travails project](https://www.theodinproject.com/lessons/javascript-knights-travails). The Odin Project challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -13,7 +13,6 @@ This is a solution to the [The Odin Project Knights Travails project](https://ww
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
-
 
 ## Overview
 
@@ -28,27 +27,24 @@ This is a solution to the [The Odin Project Knights Travails project](https://ww
 
 ## My process
 
-I chosed a different method, instead of working with nodes, queues and stacks, I store the {number of steps, path} in every chess-field. In this case the end-field stores the results also.
+I chosed a different method then suggested in the project, instead of working with nodes, queues and stacks, I store { the number of steps, path } in every chess-field. In this case the end-field stores the results also.
 
 ### Built with
 
 - JavaScrip
 - Multidimensional array for the chess fields
 - Store values in objects
-- Recursion
-
+- Grid, CSS pseudo, change attributes with JavaScript
 
 ### Continued development
 
-I would like to be comfortable with JavaScript methods, responsive web design techniques, css grid, flexbox and JavaScript and want to perfect mobile-first method.
-
+I would like to be comfortable with JavaScript, responsive web design techniques, css grid, flexbox and want to perfect mobile-first method.
 
 ### Useful resources
 
 - [The Odin Project](https://www.theodinproject.com/dashboard/) - High quality coding education maintained by an open source community.
 
-- [Homepage of Kevin Powell](https://www.kevinpowell.co/) - Kevin helpes a lot in responsive techniques. I really liked his teaching style and will follow him in the future also.
-
+- [Homepage of Kevin Powell](https://www.kevinpowell.co/) - Kevin helpes a lot working with responsive techniques. I really liked his teaching style and will follow him in the future also.
 
 ## Author
 
@@ -56,7 +52,6 @@ I would like to be comfortable with JavaScript methods, responsive web design te
 - Frontend Mentor - [@bally4h](https://www.frontendmentor.io/profile/bally4h)
 - Linkedin - [@banfibalazs](https://www.linkedin.com/in/banfibalazs/)
 
-
 ## Acknowledgments
 
-Thanks for the helps to CS50, The Odin Project, Frontend Mentor, freecodecamp.org, Web Dev Simplified, Kevin Powell and many more..
+Thanks for the helps to CS50, The Odin Project, freecodecamp.org, Web Dev Simplified, Kevin Powell, Frontend Mentor and many more..
