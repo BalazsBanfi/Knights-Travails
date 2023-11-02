@@ -67,6 +67,7 @@ export const renderPage = (start = [7, 1]) => {
   // Append knight.svg as img
   const svg = document.createElement("img");
   svg.setAttribute("src", "knight.svg");
+  svg.setAttribute("alt", "knight");
   document.getElementById(startId).appendChild(svg);
 
   // Add "click" eventlistener to all 64 cells
