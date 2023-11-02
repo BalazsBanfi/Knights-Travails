@@ -1,7 +1,7 @@
 :root {
   --bodyBg: rgb(38, 89, 106);
-  --headBg: rgb(24, 54, 64);
-  --headC: rgb(50, 124, 148);
+  --headBg: rgb(8, 40, 48);
+  --headC: rgb(123, 185, 204);
   --borderC: rgb(9, 19, 22);
   --blackCell: rgb(48, 59, 60);
   --whiteCell: rgb(129, 159, 161);
