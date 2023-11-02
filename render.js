@@ -43,7 +43,6 @@ const clearPage = (path) => {
     let actualCell = document.getElementById(`${path[i][0]}${path[i][1]}`);
     actualCell.classList.remove("pathCell");
     actualCell.innerHTML = "";
-    paragraph.innerHTML = "&nbsp";
   }
 };
 
