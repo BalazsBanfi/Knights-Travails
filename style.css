@@ -12,10 +12,10 @@
 /* roboto-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  src: url('roboto-v30-latin.zip') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("roboto-v30-latin.zip") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 * {
@@ -80,6 +80,8 @@ header * {
   display: grid;
   grid-template: repeat(8, 1fr) / repeat(8, 1fr);
   place-items: center;
+  width: 520px;
+  height: 520px;
 }
 
 .cell {
@@ -199,6 +201,11 @@ img {
 ************************/
 
 @media screen and (max-width: 750px) {
+  #table {
+    width: 400px;
+    height: 400px;
+  }
+
   .cell {
     width: 50px;
     height: 50px;
@@ -213,6 +220,11 @@ img {
 }
 
 @media screen and (max-width: 500px) {
+  #table {
+    width: 320px;
+    height: 320px;
+  }
+
   .cell {
     width: 40px;
     height: 40px;
