@@ -1,4 +1,5 @@
 import { knightMoves } from "./knightMoves.js";
+import Knight from './knight.svg';
 
 // Get the table elements by id
 const content = document.getElementById("table");
@@ -66,7 +67,7 @@ export const renderPage = (start = [7, 1]) => {
 
   // Append knight.svg as img
   const svg = document.createElement("img");
-  svg.setAttribute("src", "knight.svg");
+  svg.src = Knight;
   svg.setAttribute("alt", "knight");
   document.getElementById(startId).appendChild(svg);
 
